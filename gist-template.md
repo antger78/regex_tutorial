@@ -1,10 +1,12 @@
-# Title (replace with your title)
+# Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+In this tutorial, we will analyze a given snippet of Regex code in order to extropolate some of the guiding principles of regex. The table of contents below will help a user navigate to an explanation of the Regex component used in the given Regex code.  
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+In this tutorial, we will be going through a snppet of code meant to find an email address.  Email addresses can take several forms, with letters, numbers and symbols all possibly coming before the @ symbol, then several letters, numbers or symbols could be used in the domain name immediately following the @ symbol, and finally a domain suffix that can be any combination of letters (of a limited length) following a dot (.) symbol.  The code we have for this is as follows:
+
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ## Table of Contents
 
@@ -23,20 +25,36 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+ ^                                             $
+
+Anchors are used to open and close off the string. Used in conjunction with eachother, the ^ and $ symbol are saying that we are looking for something that starts and ends with what is specified between the two symbols. Ie. This is the beginning and end of the string we are looking for.  Find any text that begins and ends with what is between these two symbols.
 
 ### Quantifiers
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+                                         {2,6}
+
+
 
 ### OR Operator
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Character Classes
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Flags
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Grouping and Capturing
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Bracket Expressions
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Greedy and Lazy Match
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Boundaries
 
