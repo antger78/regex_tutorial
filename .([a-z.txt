@@ -1,0 +1,45 @@
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+/ = the forward slash is used as a flag to deliminate the start and end of the search criteria.  Notice that the string we are looking at begins and ends with that symbol.  When adjusted with the ^ and $ symbols, we will only look at the start and end of a line (versus the entirety of the string). start of regex
+^ = anchor used here to indicate we are looking at the beginning of a string
+DONE
+( = creating a capturing group enclosed by the next closing ).  "[a-z0-9_\.-]+"
+[ = Or operator working with the next ] used to find any thing that has either an a-z lowercase letter, or a 0-9 character, or any of the symbols: _.-
+a-z = any letter between a and z inclusive lowercase
+0-9 = any number between 0 and 9
+_ = this symbol literally
+\. = the backslash is used to escape the special meaning of the dot.  By using \. we are searching simply for the dot.
+] = closes the Or operator specified earlier
+- = this symbol literally
++ = greedy quantifier used to repeat the search criteria specified previously.  This means that, rather then searching for either an a-z character, or a 0-9 character, or any of the symbol exactly once, it keeps repeating until it no longer finds something that fits the previous criteria.
+) = closes the capturing grouping created earlier
+@ = this symbol literally
+( = opens capturing group "[\da-z\.-]+"
+[ = opens an Or operator that is looking for a single digit character, an a-z letter lowercase, a dot symbol (.) or a -
+\d = character class used to specify any single digit
+a-z = any letter between a and z inclusive lowercase
+\. = the backslash is used to escape the special meaning of the dot.  By using \. we are searching simply for the dot.
+- = this symbol literally
+] = closes the Or operator
++ = greedy quantifier searching for every instance of things that fit the critera specified in the Or operator
+) = closes the capturing group 
+\. = looking for a dot (.) explicitly
+( = creating the last capturing group
+[ = opening an Or operator
+a-z = any letter between a and z inclusive lowercase
+\. = looking for a dot (.) explicitly
+] = closes the Or operator
+{2,6} = matches any character as specified within the immediately prior Or operator
+) = closes the capturing group
+$ = anchor used to close off the string. Used in conjunction with the ^ symbol early in the regex line, we are saying that we are looking for something that starts and ends with what is specified between the two symbols.
+DONE
+/ = flag that indicates the regex is complete
+
+
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$
+([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})
+([a-z0-9_\.-]+)     @      ([\da-z\.-]+)\.([a-z\.]{2,6})
+[a-z0-9_\.-]+     @      [\da-z\.-]+       \.        [a-z\.]{2,6}
+a-z0-9_\.-   +     @     \d   a-z\.-   +      a-z   \.    {2,6}
+a-z   0-9   _   \.   -   +     @     \d   a-z\.-   +      a-z   \.    {2,6}
